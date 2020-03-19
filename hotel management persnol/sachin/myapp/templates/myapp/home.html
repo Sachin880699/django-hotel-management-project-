@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+<br>
+<br/>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body  {
+  background-image: url("{% static 'background.jpg' %}");
+  background-color: #cccccc;
+  background-size: cover;
+}
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+  <a href="{% url 'about' %}">About</a>
+  <a href="{% url 'room' %}">Room</a>
+  <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'reserve' %}">Reserve</a>
+
+  <a href="{% url 'reserve_list' %}">Clients</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<div class="main">
+  <h2><center>Hotel Management System</center></h2>
+  <br>
+  <div class="row">
+        <div class="card .col-md-3">
+            <div class="card-body">
+                <div class="card-header bg-primary text-white"> Total Rooms:</div>
+                <div class="card-body bg-dark text-white"> 7</div>
+            </div>
+        </div>
+
+        <div class="card .col-md-3">
+            <div class="card-body">
+                <div class="card-header bg-primary text-white"> Available Rooms:</div>
+                <div class="card-body bg-dark text-white"> 4</div>
+            </div>
+        </div>
+
+        <div class="card .col-md-3">
+            <div class="card-body">
+                <div class="card-header bg-primary text-white"> Total Reservations:</div>
+                <div class="card-body bg-dark text-white"> 4</div>
+            </div>
+        </div>
+
+        <div class="card .col-md-3">
+            <div class="card-body">
+                <div class="card-header bg-primary text-white"> Total Staffs:</div>
+                <div class="card-body bg-dark text-white">  2 </div>
+            </div>
+        </div>
+
+        <div class="card .col-md-3">
+            <div class="card-body">
+                <div class="card-header bg-primary text-white"> Total Customers:</div>
+                <div class="card-body bg-dark text-white">15</div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+</body>
+</html>
+
+
+
+
+{% endblock %}
